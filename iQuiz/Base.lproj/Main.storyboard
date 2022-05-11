@@ -41,34 +41,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="subtextLabel" text="Subtext" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-jg-7Yf">
-                                                    <rect key="frame" x="150" y="35" width="250" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="subtextLabel"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F1s-YA-C0D">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1s-YA-C0D">
                                                     <rect key="frame" x="0.0" y="0.0" width="146" height="100"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subjectLabel" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhD-pg-h9W" userLabel="subjectLabel">
-                                                    <rect key="frame" x="150" y="0.0" width="83" height="28"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="subjectLabel" label="subjectLabel"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MhD-pg-h9W" firstAttribute="top" secondItem="gW2-Sk-4BA" secondAttribute="top" id="Aho-BZ-MW1"/>
                                                 <constraint firstItem="F1s-YA-C0D" firstAttribute="leading" secondItem="gW2-Sk-4BA" secondAttribute="leading" id="TcN-35-lL2"/>
                                                 <constraint firstItem="F1s-YA-C0D" firstAttribute="top" secondItem="gW2-Sk-4BA" secondAttribute="top" id="edA-L6-WL9"/>
-                                                <constraint firstItem="MhD-pg-h9W" firstAttribute="leading" secondItem="F1s-YA-C0D" secondAttribute="trailing" constant="4" id="qya-xb-nzu"/>
-                                                <constraint firstAttribute="trailing" secondItem="MhD-pg-h9W" secondAttribute="trailing" constant="181" id="sD9-i9-raQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="F1s-YA-C0D" secondAttribute="bottom" id="y48-b4-Pbs"/>
                                             </constraints>
                                         </tableViewCellContentView>

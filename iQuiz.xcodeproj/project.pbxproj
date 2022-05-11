@@ -16,8 +16,6 @@
 		32B0B5EF282B044B0015BEA7 /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B5EE282B044B0015BEA7 /* iQuizTests.swift */; };
 		32B0B5F9282B044B0015BEA7 /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B5F8282B044B0015BEA7 /* iQuizUITests.swift */; };
 		32B0B5FB282B044B0015BEA7 /* iQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B5FA282B044B0015BEA7 /* iQuizUITestsLaunchTests.swift */; };
-		32B0B60C282B37AA0015BEA7 /* itemTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B60B282B37AA0015BEA7 /* itemTabelViewCell.swift */; };
-		32B0B60E282B38060015BEA7 /* Quizzes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0B60D282B38060015BEA7 /* Quizzes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +49,6 @@
 		32B0B5F4282B044B0015BEA7 /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B0B5F8282B044B0015BEA7 /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
 		32B0B5FA282B044B0015BEA7 /* iQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		32B0B60B282B37AA0015BEA7 /* itemTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemTabelViewCell.swift; sourceTree = "<group>"; };
-		32B0B60D282B38060015BEA7 /* Quizzes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +106,6 @@
 				32B0B5E0282B044B0015BEA7 /* Assets.xcassets */,
 				32B0B5E2282B044B0015BEA7 /* LaunchScreen.storyboard */,
 				32B0B5E5282B044B0015BEA7 /* Info.plist */,
-				32B0B60B282B37AA0015BEA7 /* itemTabelViewCell.swift */,
-				32B0B60D282B38060015BEA7 /* Quizzes.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -264,9 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B0B60C282B37AA0015BEA7 /* itemTabelViewCell.swift in Sources */,
 				32B0B5DC282B04490015BEA7 /* ViewController.swift in Sources */,
-				32B0B60E282B38060015BEA7 /* Quizzes.swift in Sources */,
 				32B0B5D8282B04490015BEA7 /* AppDelegate.swift in Sources */,
 				32B0B5DA282B04490015BEA7 /* SceneDelegate.swift in Sources */,
 			);
