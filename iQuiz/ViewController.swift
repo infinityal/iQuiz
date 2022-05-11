@@ -9,27 +9,23 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var tableView: UITableView!
-
+    
     let subjects: [String] = ["Mathematics", "Marvel Super Heroes", "Science"]
     let subtext: [String] = ["Let's test you basic Math knowledge!", "Are you a fan of Marvel? Test it!", "What do you know about Science?"]
     let iconName: [String] = ["math","marvel","sci"]
-
+    
     
     
     @IBAction func settingBttn(_ sender:Any){
         let alert = UIAlertController(title: "Settings go here", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
-                
-                present(alert, animated: true)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+        
+        present(alert, animated: true)
     }
-
-
-
     
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subjects.count
-        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemTableCell", for: indexPath)
@@ -39,15 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.imageView!.image = img
         return cell
     }
-
-
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("test text 123")
-    }
+    
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-            return nil
-        }
+        return nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
