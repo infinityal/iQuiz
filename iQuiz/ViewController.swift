@@ -35,8 +35,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemTableCell", for: indexPath)
         cell.textLabel!.text = subjects[indexPath.row]
         cell.detailTextLabel?.text = subtext[indexPath.row]
-        cell.imageView!.image = UIImage(named: iconName[indexPath.row])
-                
+        let img = UIImage(named: iconName[indexPath.row])?.resizeImageWithHeight(newW: 140, newH: 80)
+        cell.imageView!.image = img
         return cell
     }
 
@@ -54,6 +54,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+}
+
+extension UIImage{
+    func resizeImageWithHeight(newW: CGFloat, newH: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContext(CGSize(width: newW, height: newH))
+        self.draw(in: CGRect(x: 0, y: 0, width: newW, height: newH))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
 }
 
