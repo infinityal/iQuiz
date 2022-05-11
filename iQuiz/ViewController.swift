@@ -34,11 +34,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemTableCell", for: indexPath)
         cell.textLabel!.text = subjects[indexPath.row]
-
-        let icons = UIImage(named: iconName[indexPath.row])
-                cell.imageView?.image = icons
+        cell.detailTextLabel?.text = subtext[indexPath.row]
+        cell.imageView!.image = UIImage(named: iconName[indexPath.row])
                 
-                return cell
+        return cell
     }
 
 
