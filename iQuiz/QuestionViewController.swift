@@ -8,7 +8,7 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-    var quizSubject: String = ""
+    var quizSubject = ""
     var currentNum: Int = 0
     var correctNum: Int = 0
     var selectedBttn: Int = 0
@@ -20,9 +20,9 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var bttn3: UIButton!
     @IBOutlet weak var bttn4: UIButton!
     @IBOutlet weak var submitBttn: UIButton!
-    
+    @IBOutlet weak var titleLabel: UILabel!
     let math: [Question] = [Question(qs:"If 1=3,2=3,3=5,4=4,5=4,Then,6=?",A1: "1",A2: "2",A3: "3",A4: "4",correct: 3),
-                            Question(qs: "What is our current numerical system based on?", A1: "Hindu-Arabic numeral system", A2: "Roman numeral system", A3: "Greeks numeral system", A4: "English numeral system", correct: 1),
+                            Question(qs: "What is our current numerical system based on?", A1: "Greeks numeral system", A2: "Roman numeral system", A3: "Hindu-Arabic numeral system", A4: "English numeral system", correct: 3),
                             Question(qs: "Which number is the sum of its multiples when you add the single digits together?", A1: "3", A2: "6", A3: "9", A4: "11", correct: 3)]
     let marvel: [Question] = [Question(qs: "Who is Tony Stark’s father?", A1: "Henry Stark", A2: "Mark Stark", A3: "Howard Stark", A4: "Thomas Stark", correct: 3),
                                Question(qs: "What type of doctor is Doctor Strange?", A1: "Cardiothoracic surgeon", A2: "Plastic surgeon", A3: "Neurological surgeon", A4: "General surgeon", correct: 3),
@@ -70,11 +70,43 @@ class QuestionViewController: UIViewController {
     }
      
     @IBAction func submitBttn(_ sender: Any) {
-        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "answer") as? AnswerViewController
+        if quizSubject == "Mathematics" {
+            vc?.correctText = "Correct Answer: " + math[currentNum].A3
+            vc?.qs = math[currentNum].qs
+            if selectedBttn == math[currentNum].correct {
+                correctNum += 1
+            } else {
+                vc?.correctStatus = false
+                vc?.indicatorText = "You got it WRONG!"
+            }
+        } else if quizSubject == "Marvel Super Heroes" {
+            vc?.correctText = "Correct Answer: " + marvel[currentNum].A3
+            vc?.qs = marvel[currentNum].qs
+            if selectedBttn == marvel[currentNum].correct {
+                correctNum += 1
+            } else {
+                vc?.correctStatus = false
+                vc?.indicatorText = "You got it WRONG!"
+            }
+        } else {
+            vc?.correctText = "Correct Answer: " + science[currentNum].A3
+            vc?.qs = science[currentNum].qs
+            if selectedBttn == science[currentNum].correct {
+                correctNum += 1
+            } else {
+                vc?.correctStatus = false
+                vc?.indicatorText = "You got it WRONG!"
+            }
+        }
+        vc?.currentNum = currentNum
+        vc?.correctNum = correctNum
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        titleLabel.text = quizSubject
             switch quizSubject {
             case "Mathematics":
                 qsLabel.text = math[currentNum].qs

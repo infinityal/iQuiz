@@ -13,16 +13,46 @@ class AnswerViewController: UIViewController {
     var correctNum: Int = 0
     var selectedBttn: Int = 0
     let totalNum: Int = 3
+    var qs = ""
+    var correctText = ""
+    var indicatorText = "You got it RIGHT!"
+    var correctStatus: Bool = true
     
+    @IBOutlet weak var qsLabel: UILabel!
+    @IBOutlet weak var correctAnswer: UIButton!
+    @IBOutlet weak var indicator: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBAction func nextBttn(_ sender: Any) {
+        if currentNum == totalNum - 1{
+            let finishVC = storyboard?.instantiateViewController(withIdentifier: "finish") as? FinishViewController
+            finishVC?.correctNum = correctNum
+            navigationController?.pushViewController(finishVC!, animated: true)
+        } else {
+            let questionVC = storyboard?.instantiateViewController(withIdentifier: "question") as? QuestionViewController
+            questionVC?.quizSubject = self.quizSubject
+            questionVC?.selectedBttn = 0
+            questionVC?.correctNum = self.correctNum
+            questionVC?.currentNum = self.currentNum + 1
+            navigationController?.pushViewController(questionVC!, animated: true)
+        }
+    }
+
     
     
     
     @IBAction func backBttn(_ sender: Any) {
-        let mainViewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        let mainViewController = storyboard?.instantiateViewController(withIdentifier: "Home") as? ViewController
         self.navigationController?.pushViewController(mainViewController!, animated: true)
         }
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        correctAnswer.setTitle(correctText, for: .normal)
+        indicator.text = indicatorText
+        if correctStatus == false {
+            correctAnswer.tintColor = UIColor.red
+        }
+
     }
 }

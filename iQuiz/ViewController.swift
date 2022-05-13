@@ -37,11 +37,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "question") as? QuestionViewController {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "question") as? QuestionViewController
         let selectedRow = subjects[indexPath.row]
-        vc.quizSubject = selectedRow
-        navigationController?.pushViewController(vc, animated: true)
-        }
+        vc!.quizSubject = selectedRow
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     override func viewDidLoad() {
