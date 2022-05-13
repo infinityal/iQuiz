@@ -32,7 +32,7 @@ class QuestionViewController: UIViewController {
                                Question(qs: "What is the hottest planet in the solar system?", A1: "Mercury", A2: "Jupiter", A3: "Venus", A4: "Neptune", correct: 3)]
     
     @IBAction func backBttn(_ sender: Any) {
-        let mainViewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        let mainViewController = storyboard?.instantiateViewController(withIdentifier: "Home") as? ViewController
         self.navigationController?.pushViewController(mainViewController!, animated: true)
         }
     
