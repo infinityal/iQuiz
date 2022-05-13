@@ -99,6 +99,7 @@ class QuestionViewController: UIViewController {
                 vc?.indicatorText = "You got it WRONG!"
             }
         }
+        vc?.quizSubject = quizSubject
         vc?.currentNum = currentNum
         vc?.correctNum = correctNum
         navigationController?.pushViewController(vc!, animated: true)

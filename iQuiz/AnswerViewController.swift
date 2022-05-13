@@ -26,6 +26,7 @@ class AnswerViewController: UIViewController {
     @IBAction func nextBttn(_ sender: Any) {
         if currentNum == totalNum - 1{
             let finishVC = storyboard?.instantiateViewController(withIdentifier: "finish") as? FinishViewController
+            finishVC?.quizSubject = quizSubject
             finishVC?.correctNum = correctNum
             navigationController?.pushViewController(finishVC!, animated: true)
         } else {
