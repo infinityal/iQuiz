@@ -36,8 +36,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let qsViewController = storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController
+        qsViewController?.quizSubject = subjects[indexPath.row]
+        self.navigationController?.pushViewController(qsViewController!, animated: true)
     }
     
     override func viewDidLoad() {
