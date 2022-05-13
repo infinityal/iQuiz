@@ -105,6 +105,9 @@ class QuestionViewController: UIViewController {
         navigationController?.pushViewController(vc!, animated: true)
     }
     
+    
+    
+    
     override func viewDidLoad() {
             super.viewDidLoad()
         titleLabel.text = quizSubject
@@ -129,6 +132,26 @@ class QuestionViewController: UIViewController {
                 bttn4.setTitle(science[currentNum].A4, for: .normal)
             default:
                 NSLog("Error")
+        }
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+            let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+                
+            leftSwipe.direction = .left
+            rightSwipe.direction = .right
+
+            view.addGestureRecognizer(leftSwipe)
+            view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func handleSwipes(_  sender: UISwipeGestureRecognizer){
+        if sender.direction == .left {
+            currentNum = 0
+            correctNum = 0
+            backBttn(self)
+        }
+        if sender.direction == .right {
+            submitBttn(self)
         }
     }
 }
