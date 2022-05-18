@@ -17,8 +17,10 @@ class AnswerViewController: UIViewController {
     var correctText = ""
     var indicatorText = "You got it RIGHT!"
     var correctStatus: Bool = true
+    var selectedText = ""
     
     @IBOutlet weak var qsLabel: UILabel!
+    @IBOutlet weak var selectedAnswer: UIButton!
     @IBOutlet weak var correctAnswer: UIButton!
     @IBOutlet weak var indicator: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -49,10 +51,11 @@ class AnswerViewController: UIViewController {
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        selectedAnswer.setTitle(selectedText, for: .normal)
         correctAnswer.setTitle(correctText, for: .normal)
         indicator.text = indicatorText
         if correctStatus == false {
-            correctAnswer.tintColor = UIColor.red
+            selectedAnswer.tintColor = UIColor.red
         }
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
             let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))

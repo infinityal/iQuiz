@@ -287,6 +287,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ5-OQ-qeT">
+                                <rect key="frame" x="-1" y="370" width="414" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="A1."/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xVg-g8-m8A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -295,6 +302,7 @@
                         <outlet property="correctAnswer" destination="9zi-Cf-5r2" id="Wjd-we-fYY"/>
                         <outlet property="indicator" destination="dFj-y8-SZx" id="bFy-jM-BhG"/>
                         <outlet property="qsLabel" destination="atX-nu-FUR" id="tnK-PS-fpJ"/>
+                        <outlet property="selectedAnswer" destination="qQ5-OQ-qeT" id="4wr-SC-FCB"/>
                         <outlet property="titleLabel" destination="3rb-k4-98V" id="eOF-ot-BMY"/>
                     </connections>
                 </viewController>
